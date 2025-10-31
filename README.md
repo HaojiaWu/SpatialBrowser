@@ -3,7 +3,7 @@
 </p>
 
 # Spatial Browser
-
+SpatialBrowser is a Flask web application for joint visualization of multimodal spatial transcriptomics data.
 ### 1. What this webapp looks like?
 Click here to view the demo: https://spatial.humphreyslab.com/
 
