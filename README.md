@@ -1,4 +1,4 @@
-# Spatial Browser
+# Spatial Browser <img src="banner.png" alt="logo" width="60" style="vertical-align: middle;">
 
 ### 1. What this webapp looks like?
 Click here to view the demo: https://spatial.humphreyslab.com/
