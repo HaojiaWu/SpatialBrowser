@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spatial Browser | HumphreysLab</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/3.0.0/openseadragon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@3.0.7/marked.min.js"></script>
+</head>
+<body>
+    <!-- Gene Input with Color Selection -->
+    <div id="gene-input-container">
+        <label for="gene-input">Enter Gene:</label>
+        <input type="text" id="gene-input" placeholder="e.g., Nphs2">
+        <button id="submit-button">Submit</button>
+
+        <!-- Dropdown for Color Selection -->
+        <label for="color-select">Select Color:</label>
+        <select id="color-select">
+            <option value="cyan">Cyan</option>
+            <option value="yellow">Yellow</option>
+            <option value="green">Green</option>
+        </select>
+    </div>
+
+
+    <!-- Navigation Panel -->
+    <div id="navigation-panel">
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='image/banner.png') }}" alt="Spatial Browser Logo">
+        </div>
+
+        <div class="tab-title">About the Data</div>
+        <div class="about-text">
+            <p>This Spatial Browser displays gene expression data from mouse kidney tissue.</p>
+        </div>
+<!--        <div class="separator"></div> -->
+
+        <div class="tab-title">Select Dataset</div>
+        <div class="tab active-tab" data-dataset="database1">Healthy</div>
+        <div class="tab" data-dataset="database2">Day42</div>
+        <div class="tab" data-dataset="database3">Day56</div>
+        <div class="tab" data-dataset="database4">Day70</div>
+
+        <!-- Separator line -->
+ <!--         <div class="separator"></div> -->
+
+
+        <div class="tab-title">Reference</div>
+        <div class="about-text">
+            <p>If you find the dataset helpful to your research, please consider citing: TBD </p>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="tab-title">Contact</div>
+	    <p> Benjamin D. Humphreys, MD, PhD</p>
+            <p><a href="mailto:humphreysbd@wustl.edu">humphreysbd@wustl.edu</a></p>
+            <p>+1 - (314) - 362 - 8233</p>
+            <p>600 S. Euclid Ave. CB 8126</p>
+            <p>St. Louis, MO 63110</p>
+            <p>All rights reserved.</p>
+            <p>&copy; Copyright 2025 Washington University in St. Louis</p>
+            <p></p><a href="{{ url_for('static', filename='doc/terms.html') }}" target="_blank">Terms and Conditions</a></p>
+            <p>Created by <a href="https://humphreyslab.com/" target="_blank">The Humphreys Lab</a>.</p>
+        </div>
+
+ <!--        <div class="separator"></div> -->        
+
+    </div>
+
+    <!-- Viewer Container -->
+    <div id="viewers-container">
+        <div class="viewer-wrapper">
+            <!-- Text bar for viewer1 -->
+            <div class="viewer-title">database1</div>
+            <div id="viewer1" class="viewer"></div>
+        </div>
+
+        <div class="viewer-wrapper">
+            <!-- Text bar for viewer2 -->
+            <div class="viewer-title">database2</div>
+            <div id="viewer2" class="viewer"></div>
+        </div>
+    </div>
+
+    <!-- Gene Information from Gemini Section -->
+    <div id="chatbot-wrapper">
+        <div class="chatbot-title">Gene Information (Google Gemini)</div>
+        <div id="chatbot-response" class="chatbot-content">
+            Gemini may make mistakes. Use with caution!
+        </div>
+    </div>
+<script src="{{ url_for('static', filename='javascript/script.js') }}"></script>
+</body>
+</html>
